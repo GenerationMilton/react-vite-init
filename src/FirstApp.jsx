@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 //const newMessage= true;
 //const newMessage= "hola"
 //const newMessage= [1,2,3,4,5,6,7,8,9];
@@ -18,17 +18,25 @@ const getResult  =(a,b)=>{
 
 //Fragmento agrupador de codigo jsx <> tienen un nodo padre
 //Por lo menos un nodo padre y devolver los elementos que se necesiten
-const FirstApp = () => {
+export const FirstApp = ({ title, subtitle }) => {
+
+    //console.log(props);
 
   return (
     <>
-        <h1>{getResult(5,5)}</h1>
+        <h1>{ title }</h1>
+        {/* <h1>{getResult(5,5)}</h1> */}
         {/* <h1>Hola Mundo</h1> */}
         {/* <code>{ JSON.stringify(newMessage) }</code> */}
-        <p>Soy un subtitulo</p>
+        <p>{subtitle}</p>
     </>
     
   )
 }
 
-export default FirstApp
+FirstApp.PropTypes ={
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.number.isRequired,
+}
+
+// export default FirstApp
