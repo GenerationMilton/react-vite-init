@@ -18,7 +18,11 @@ const getResult  =(a,b)=>{
 
 //Fragmento agrupador de codigo jsx <> tienen un nodo padre
 //Por lo menos un nodo padre y devolver los elementos que se necesiten
-export const FirstApp = ({ title, subtitle }) => {
+export const FirstApp = ({ 
+    title, 
+    subTitle,
+    name
+}) => {
 
     //console.log(props);
 
@@ -28,15 +32,22 @@ export const FirstApp = ({ title, subtitle }) => {
         {/* <h1>{getResult(5,5)}</h1> */}
         {/* <h1>Hola Mundo</h1> */}
         {/* <code>{ JSON.stringify(newMessage) }</code> */}
-        <p>{subtitle}</p>
+        <p>{subTitle}</p>
+        <p>{name}</p>
     </>
     
   )
 }
 
-FirstApp.PropTypes ={
+FirstApp.propTypes ={
     title: PropTypes.string.isRequired,
-    subtitle: PropTypes.number.isRequired,
+    subTitle: PropTypes.string,
+}
+//default props
+FirstApp.defaultProps ={
+    title:'No hay titulo',
+    subTitle:'No hay subtitulo',
+    name:'Milton Munoz'
 }
 
 // export default FirstApp
